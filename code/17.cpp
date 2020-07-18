@@ -1,8 +1,8 @@
 #include <bits/stdc++.h> 
 
-std::string s[] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
-std::string s2[] = {"eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-std::string s3[] = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninty"};
+std::string s[] = {"one", "two", "three", "four", "five", "six", "seven","eight", "nine", "ten"};
+std::string s2[] = {"eleven", "twelve", "thirteen", "fourteen","fifteen","sixteen", "seventeen", "eighteen", "nineteen"};
+std::string s3[] = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 std::string s4[] = {"hundred", "thousand"};
 
 std::string getX(int x, int type=0) {
@@ -30,6 +30,7 @@ int get(int x) {
 		ans = getX(x);
 	}
 	int cnt = 0;
+	//std::cout << ans << "\n";
 	for (size_t i = 0; i < ans.length(); ++i)
 		if (isalpha(ans[i])) ++cnt;
 	return cnt;
