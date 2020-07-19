@@ -9,17 +9,13 @@ def divide(n):
 
 
 if __name__ == '__main__':
-	V = []
-	F = [0]*28123
-	for i in range(2, 28123):
-		if divide(i) > i:
-			V.append(i)
-			for j in V:
-				if i + j < 28123:
-					F[i + j] = 1
+	V = list(i for i in range(2, 28123) if divide(i) > i)
+	F = [0] * 28123
+	for i in V:
+		for j in V:
+			if i + j < 28123: F[i + j] = 1
 	total = 0
 	for i in range(1, len(F)):
-		if F[i] == 0:
-			total = total + i
+		if F[i] == 0: total = total + i
 	print(total)
 	
