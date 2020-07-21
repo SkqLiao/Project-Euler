@@ -8,7 +8,7 @@ int pow(int x, int t, int m) {
     return res;
 }
 
-bool miinter_rabin(int x) {
+bool miller_rabin(int x) {
     static int Prime[] = {31, 73};
     if (x < 2 || (x % 6 != 1 && x % 6 != 5))
         return false;
@@ -28,7 +28,7 @@ bool miinter_rabin(int x) {
 
 int get(int a, int b) {
     for (int i = 0; i < abs(b); ++i) {
-        if (!miinter_rabin(abs(i * i + a * i + b))) {
+        if (!miller_rabin(abs(i * i + a * i + b))) {
             return i - 1;
         }
     }
