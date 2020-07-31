@@ -1,25 +1,23 @@
-def check(x):
-	if x == 1: return False
-	for i in range(2, int(x ** 0.5) + 1):
-		if x % i == 0: return False
-	return True
+from sympy import isprime
 
 if __name__ == '__main__':
-	cnt = 0
-	cur = 10
-	ans = 0
-	while cnt < 11: 
+	cnt, ans, cur = 0, 0, 10
+	while cnt < 11:
 		s = str(cur)
+		if cur > 99 and any(int(i) % 2 == 0 for i in s): 
+			cur += 1
+			continue
 		flag = 1
 		while len(s) and flag:
-			flag &= check(int(s))
+			flag &= isprime(int(s))
 			s = s[1:]
 		s = str(cur)
 		while len(s) and flag:
-			flag &= check(int(s))
+			flag &= isprime(int(s))
 			s = s[:-1]
 		if flag:
 			cnt += 1
 			ans += cur
+			print(cur)
 		cur += 1
 	print(ans)

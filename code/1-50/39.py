@@ -1,13 +1,12 @@
 if __name__ == '__main__':
-	mx = 0
-	ans = 0
-	for i in range(3, 1001):
+	mx, ans = 0, 0
+	for i in range(4, 1001, 2):
 		total = 0
-		for a in range(1, i):
+		for a in range(1, i // 3):
 			for b in range(a, i):
 				c = i - a - b
 				if c < b: break
-				if c ** 2 == a ** 2 + b ** 2: 
+				if c * c == a * a + b * b: 
 					total += 1
 					break
 		if total > mx: 

@@ -1,15 +1,14 @@
 import queue
 
 if __name__ == '__main__':
-	f = [i * (3 * i - 1) // 2 for i in range(0, 10000)]
-	s = set()
-	q = queue.PriorityQueue()
-	for i in range(1, 10000):
-		s.add(f[i])
-		for j in range(i + 1, 10000):
-			q.put([abs(f[i] - f[j]), i, j])
-	while not q.empty():
-		x = q.get()
-		if x[0] in s and (f[x[1]] + f[x[2]]) in s:
-			print(x)
-			exit(0)
+	f = [i * (3 * i - 1) // 2 for i in range(0, 1000001)]
+	s = set(f)
+	for i in range(1, 1000000):
+		for j in range(1, 1000000):
+			if f[i] + f[j] in s and f[i] + 2 * f[j] in s:
+				print(f[i], f[j], f[i] + f[j])
+				exit(0)
+			elif f[i] + f[j] < f[j + 1]: break
+			elif j == 999999:
+				print(str(i) + "fuck")
+				exit(0) 

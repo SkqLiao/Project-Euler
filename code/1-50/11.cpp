@@ -27,60 +27,32 @@ int main() {
 	for (int i = 0; i < 20; ++i) {
 		for (int j = 0; j <= 16; ++j) {
 			int cur = 1;
-			for (int k = j; k < j + 4; ++k) {
+			for (int k = j; k < j + 4; ++k)
 				cur *= A[i][k];
-			}
-			if (mx < cur) {
-				for (int k = j; k < j + 4; ++k) {
-					printf("%d ", A[i][k]);
-				}
-				puts("");
-			}
 			mx = std::max(mx, cur);
 		}
 	}
 	for (int i = 0; i <= 16; ++i) {
 		for (int j = 0; j < 20; ++j) {
 			int cur = 1;
-			for (int k = i; k < i + 4; ++k) {
+			for (int k = i; k < i + 4; ++k)
 				cur *= A[k][j];
-			}
-			if (mx < cur) {
-				for (int k = i; k < i + 4; ++k) {
-					printf("%d ", A[k][j]);
-				}
-				puts("");
-			}
 			mx = std::max(mx, cur);
 		}
 	}
 	for (int i = 0; i <= 16; ++i) {
 		for (int j = 0; j <= 16; ++j) {
 			int cur = 1;
-			for (int k = 0; k < 4; ++k) {
+			for (int k = 0; k < 4; ++k)
 				cur *= A[i + k][j + k];
-			}
-			if (mx < cur) {
-				for (int k = 0; k < 4; ++k) {
-					printf("%d ", A[i + k][j + k]);
-				}
-				puts("");
-			}
 			mx = std::max(mx, cur);
 		}
 	}
 	for (int i = 3; i < 20; ++i) {
 		for (int j = 3; j < 20; ++j) {
 			int cur = 1;
-			for (int k = 0; k < 4; ++k) {
+			for (int k = 0; k < 4; ++k)
 				cur *= A[i - k][j + k];
-			}
-			if (mx < cur) {
-				for (int k = 0; k < 4; ++k) {
-					printf("%d ", A[i - k][j + k]);
-				}
-				puts("");
-			}
 			mx = std::max(mx, cur);
 		}
 	}

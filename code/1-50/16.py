@@ -1,4 +1,2 @@
-y = 0
-for i in str(2**1000):
-	y = y + int(i)
-print(y)
+if __name__ == '__main__':
+	print(sum(int(i) for i in str(2**1000)))

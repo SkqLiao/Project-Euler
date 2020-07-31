@@ -1,4 +1,4 @@
-from itertools import *
+from itertools import permutations
 
 if __name__ == '__main__':
 	total = 0

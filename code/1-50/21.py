@@ -8,11 +8,9 @@ def calSum(x):
 	return res - x
 
 if __name__ == '__main__':
-	N = 28123
-	F = set()
 	res = 0
-	for i in range(2, N):
-		if calSum(i) > i: F.add(i)
-		if not any((i - x in F) for x in F): res += i
+	for i in range(1, 10000):
+		x = calSum(i)
+		if i != x and calSum(x) == i:
+			res += i
 	print(res)
-	

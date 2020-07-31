@@ -17,7 +17,10 @@ void bf() {
 	for (int i = 1; i <= 10000; ++i) Sum[i] = get(i);
 	for (int i = 1; i <= 10000; ++i) {
 		if (Sum[i] > 10000) continue;
-		if (Sum[Sum[i]] == i && i != Sum[i]) ans += i;
+		if (Sum[Sum[i]] == i && i != Sum[i]) {
+			printf("%d ", i);
+			ans += i;
+		}
 	}
 	printf("%d\n", ans);
 }
